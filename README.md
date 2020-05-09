@@ -23,3 +23,7 @@ Use RouteModule.forChild() for feature routes
 #### '/welcome' > HTML5 urls (default) | "#/welcome' > hash based urls
 
 for hash based urls use RouteModule.forRoot([...],{useHash:true})
+
+####
+
+if we use secondary routes inluding primary like '/products(popup:messages)' then unlike router.navigateByUrl, router.navigate keeps the secondary routes
