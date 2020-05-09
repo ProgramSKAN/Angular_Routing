@@ -1,14 +1,15 @@
-import { Component } from '@angular/core';
+import { Router } from "@angular/router";
+import { Component } from "@angular/core";
 
-import { AuthService } from './user/auth.service';
+import { AuthService } from "./user/auth.service";
 
 @Component({
-  selector: 'pm-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: "pm-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"],
 })
 export class AppComponent {
-  pageTitle = 'Acme Product Management';
+  pageTitle = "Acme Product Management";
 
   get isLoggedIn(): boolean {
     return this.authService.isLoggedIn;
@@ -18,13 +19,14 @@ export class AppComponent {
     if (this.authService.currentUser) {
       return this.authService.currentUser.userName;
     }
-    return '';
+    return "";
   }
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) {}
 
   logOut(): void {
     this.authService.logout();
-    console.log('Log out');
+    console.log("Log out");
+    this.router.navigateByUrl("/welcome");
   }
 }

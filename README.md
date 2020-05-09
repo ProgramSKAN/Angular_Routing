@@ -20,10 +20,14 @@ Use RouteModule.forRoot() for app routes (must be one time only)
 
 Use RouteModule.forChild() for feature routes
 
+since route order matters, forchild routes seen first.later forroot
+
 #### '/welcome' > HTML5 urls (default) | "#/welcome' > hash based urls
 
 for hash based urls use RouteModule.forRoot([...],{useHash:true})
 
 ####
 
-if we use secondary routes inluding primary like '/products(popup:messages)' then unlike router.navigateByUrl, router.navigate keeps the secondary routes
+if we use secondary routes inluding primary like '/products(popup:messages)' then unlike router.navigateByUrl, router.navigate keeps the secondary routes.
+
+use navigateByUrl to ensure every existing route parameter & secondary route is removed.ex:we use it for logout route
