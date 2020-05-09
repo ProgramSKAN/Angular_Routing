@@ -31,3 +31,8 @@ for hash based urls use RouteModule.forRoot([...],{useHash:true})
 if we use secondary routes inluding primary like '/products(popup:messages)' then unlike router.navigateByUrl, router.navigate keeps the secondary routes.
 
 use navigateByUrl to ensure every existing route parameter & secondary route is removed.ex:we use it for logout route
+
+#### route parameters
+
+use '/products/:id/edit' for edit product page
+use '/products/0/edit' for Add product page, because edit component can be reused
