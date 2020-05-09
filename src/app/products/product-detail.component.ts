@@ -36,7 +36,6 @@ export class ProductDetailComponent {
     if (this.product) {
       this.pageTitle = `Product Detail: ${this.product.productName}`;
     } else {
-      this.pageTitle = 'No product found';
       this.pageTitle = "No product found";
     }
   }
