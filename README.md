@@ -36,3 +36,7 @@ use navigateByUrl to ensure every existing route parameter & secondary route is 
 
 use '/products/:id/edit' for edit product page
 use '/products/0/edit' for Add product page, because edit component can be reused
+
+use this.route.snapshot.paramMap when we need to read parameter only once and it never changes
+
+use this.route.paramMap.subscribe when we need to read changing parameter
