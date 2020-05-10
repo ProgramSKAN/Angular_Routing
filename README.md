@@ -46,3 +46,19 @@ use this.route.paramMap.subscribe when we need to read changing parameter
 defined in curly braces with key value.
 
 optional route parameters must always be after required route parameters
+
+#### Prefetching Data Using Route Resolvers
+
+used to prevent partial page load due to time taken to retrive data.
+
+using resolvers page is loaded only after the full data is retrieved.prevents display of partial page
+
+prevent routing to page where there an error.improves flow when error occurs.
+
+#### Route 'data' property in RouterModule.forChild
+
+{path:'products',component:ProductListComponent,data:{pageTitle:'Product List'}}
+
+this.route.snapshot.data['pageTitle']//no need to use observable since it cannot change through out the lifetime of app
+
+used to provide any arbitrary data to a route.Data defined in 'data' property cannot change through out the lifetime of the application.so we use it for static data.Ex:pageTitle
