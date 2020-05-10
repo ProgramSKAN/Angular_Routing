@@ -159,3 +159,11 @@ popup:['messages']
 ###### or manually build url
 
 this.router.navigateByUrl('/products/5/edit(pop:summary/5)')
+
+#### clear secondary router-outlet
+
+[routerLink]="[{outlets:{popup:null}}]"
+
+or this.router.navigate([{outlets:{popup:null}}])
+
+or manually clear secondary router-outlet info> this.router.navigateByUrl(['/login'])
