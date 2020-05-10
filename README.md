@@ -102,3 +102,13 @@ this is also useful for lazy loading
 routerLinkActive='active'::::applies 'active' class to route
 
 [routerLinkActiveOptions]="{exact:true}"::::applies style class set by routerLinkActive for the route that exactly fully matches
+
+#### Animating route Transtions
+
+step1:import BrowserAnimationsModule
+
+step2:Define the desired animations
+
+step3:Register the animation with component
+
+step4:trigger the animation from router outlet

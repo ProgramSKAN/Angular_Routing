@@ -1,3 +1,4 @@
+import { slideInAnimation } from './app.animation';
 import { Router } from "@angular/router";
 import { Component } from "@angular/core";
 
@@ -7,6 +8,7 @@ import { AuthService } from "./user/auth.service";
   selector: "pm-root",
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.css"],
+  animations: [slideInAnimation]
 })
 export class AppComponent {
   pageTitle = "Acme Product Management";
@@ -22,7 +24,7 @@ export class AppComponent {
     return "";
   }
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) { }
 
   logOut(): void {
     this.authService.logout();
