@@ -132,3 +132,30 @@ used to build multiwindow application like outlook,Gmail
 used to display second panel that allows user to take notes or make comments
 
 used to display messages or other information to the user....
+
+#### how does router know where to disply secondary router-outlet
+
+each secondary must have a name. ex:<router-outlet name="popup"></router-outlet>.we use that name to tell the router to place the secondary content in a specific outlet.
+
+we can define any number of secondary router-oulet at the same level/same html template of the hierarchy but each must have a unique name.
+
+#### Activating secondary routes
+
+[routerLink]="[{outlets:{popup:['messages']}}]" :: popup is the name of the outlet
+
+###### we can redirect to multiple router outlets(primary and secondary) at once>>
+
+[routerLink]="['/products',product.id,'edit',{outlets:{popup:['summary',product.id]}}]" or
+
+this.router.navigate(['/products',product.id,'edit',{outlets:{popup:['messages']}}])
+
+###### by default primary router-outlet has name 'primary', so below code also works
+
+this.router.navigate([,{outlets:{
+primary:['/products',product.id,'edit'],
+popup:['messages']
+}}])
+
+###### or manually build url
+
+this.router.navigateByUrl('/products/5/edit(pop:summary/5)')
