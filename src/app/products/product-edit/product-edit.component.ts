@@ -1,5 +1,5 @@
 import { ActivatedRoute } from "@angular/router";
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 import { MessageService } from "../../messages/message.service";
 
@@ -10,7 +10,7 @@ import { ProductService } from "../product.service";
   templateUrl: "./product-edit.component.html",
   styleUrls: ["./product-edit.component.css"],
 })
-export class ProductEditComponent {
+export class ProductEditComponent implements OnInit {
   pageTitle = "Product Edit";
   errorMessage: string;
 
@@ -23,8 +23,10 @@ export class ProductEditComponent {
   ) {}
 
   ngOnInit(): void {
-    const id = +this.route.snapshot.paramMap.get("id");
-    this.getProduct(id);
+    this.route.paramMap.subscribe((params) => {
+      const id = +params.get("id");
+      this.getProduct(id);
+    });
   }
 
   getProduct(id: number): void {
