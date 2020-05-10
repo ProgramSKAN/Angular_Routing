@@ -40,3 +40,9 @@ use '/products/0/edit' for Add product page, because edit component can be reuse
 use this.route.snapshot.paramMap when we need to read parameter only once and it never changes
 
 use this.route.paramMap.subscribe when we need to read changing parameter
+
+#### optional route paramaters
+
+defined in curly braces with key value.
+
+optional route parameters must always be after required route parameters
