@@ -97,9 +97,10 @@
 
     <div class="wizard">
       <a [routerLink]="['info']"
-         routerLinkActive='active'>Basic Information</a>
+         routerLinkActive='active'>Basic Information <span
+              [ngClass]="{'fa fa-exclamation':!isValid('info')}"></span></a>
       <a [routerLink]="['tags']"
-         routerLinkActive='active'>Search Tags</a>
+         routerLinkActive='active'>Search Tags <span [ngClass]="{'fa fa-exclamation':!isValid('info')}"></span></a>
     </div>
     <router-outlet></router-outlet>
     <div class="row mb-2">

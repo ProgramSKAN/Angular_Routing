@@ -96,3 +96,9 @@ sol:define form in each child component , perform manual validation::works
 router-outlet in app.component.html renders the ProductListComponent,ProductDetailComponent,ProductEditComponent(info,edit renders in child router-outlet of ProductEditComponent).but for grouping purpose we move ProductDetailComponent,ProductEditComponent to children but where render it.if you put child router-oulet in parent components template which is ProductListComponent then ProductDetailComponent,ProductEditComponent in child router-oulet renders in ProductListComponent template which is not expected.so move ProductListComponent to child as well.so parent component {paht:'products'} doesn't have component.so, its called component less route
 
 this is also useful for lazy loading
+
+#### styling
+
+routerLinkActive='active'::::applies 'active' class to route
+
+[routerLinkActiveOptions]="{exact:true}"::::applies style class set by routerLinkActive for the route that exactly fully matches
