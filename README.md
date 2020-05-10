@@ -118,3 +118,17 @@ step4:trigger the animation from router outlet
 {enabletracing:true}> it prints the Router Events in console
 
 Router Event sequence::::NavigationStart,RoutesRecognized,GuardsCheckStart,ChildActivationStart,ActivationStart,GuardsCheckEnd,ResolveStart,ResolveEnd,ActivationEnd,ChildActivationEnd,NavigationEnd
+
+#### Reacting to routing events
+
+used to display spinner,log actions,Execute logic
+
+#### Secondary routes
+
+used to display dashboad with multiple panels that each support multiple routes. (like powerbi dashboard)
+
+used to build multiwindow application like outlook,Gmail
+
+used to display second panel that allows user to take notes or make comments
+
+used to display messages or other information to the user....
