@@ -11,8 +11,8 @@ const routes: Routes = [];
       { path: "welcome", component: WelcomeComponent },
       { path: "", redirectTo: "welcome", pathMatch: "full" },
       { path: "**", component: PageNotFoundComponent },
-    ]),
+    ], { enableTracing: true }),
   ],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

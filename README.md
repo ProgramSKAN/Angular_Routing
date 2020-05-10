@@ -112,3 +112,9 @@ step2:Define the desired animations
 step3:Register the animation with component
 
 step4:trigger the animation from router outlet
+
+#### watching routing events
+
+{enabletracing:true}> it prints the Router Events in console
+
+Router Event sequence::::NavigationStart,RoutesRecognized,GuardsCheckStart,ChildActivationStart,ActivationStart,GuardsCheckEnd,ResolveStart,ResolveEnd,ActivationEnd,ChildActivationEnd,NavigationEnd
