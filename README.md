@@ -62,3 +62,19 @@ prevent routing to page where there an error.improves flow when error occurs.
 this.route.snapshot.data['pageTitle']//no need to use observable since it cannot change through out the lifetime of app
 
 used to provide any arbitrary data to a route.Data defined in 'data' property cannot change through out the lifetime of the application.so we use it for static data.Ex:pageTitle
+
+#### child routes
+
+to define routes within other routes.ie.to display routed component templates within other routed component template.
+
+tabs/breadcrumbs are nice way to show child routes.
+
+child routes can be used to build master/detail style page
+
+child routes are required for lazy loading
+
+Absolute path(begins with /) for child route::::<a [routerLink]="['/products',product.id,'edit','info']">Info</a>
+::::this.router.navigate(['/products',this.product.id,'edit','info'])
+
+Relative path(does not begins with /) for child route::::<a [routerLink]="['info']">Info</a>
+::::this.router.navigate(['info'],{relativeTo: this.route})::::this.route is ActivatedRoute
