@@ -78,3 +78,7 @@ Absolute path(begins with /) for child route::::<a [routerLink]="['/products',pr
 
 Relative path(does not begins with /) for child route::::<a [routerLink]="['info']">Info</a>
 ::::this.router.navigate(['info'],{relativeTo: this.route})::::this.route is ActivatedRoute
+
+#### validation across child routes
+
+if the
