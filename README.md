@@ -205,3 +205,9 @@ the feature area to lazy load must be defined in its own feature module because 
 routes are grouped under a single parent route because lazy loading is configured on the parent route path.the module for that path is then loaded asynchronously.
 
 feature module must not be imported in any other angular module.
+
+#### canLoad Guard
+
+check criteria before loading asynchronous route
+
+used for : prevent loading a route if the user cannot access it.
