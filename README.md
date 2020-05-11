@@ -175,3 +175,5 @@ canDeactivate > canLoad > canactivateChild > canActivate > resolvers
 guard can be added to every route (or) adding a guard to parent guard will guard all its child routes
 
 angular CLI> ng g g auth
+
+since resolved run after route guard, we can't share data from resolver like> route.data['product'].so store the redirecturl in authservice then use that url
