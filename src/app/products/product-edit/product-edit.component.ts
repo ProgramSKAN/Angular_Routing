@@ -1,3 +1,4 @@
+
 import { ActivatedRoute, Router } from "@angular/router";
 import { Component, OnInit } from "@angular/core";
 
@@ -14,8 +15,26 @@ export class ProductEditComponent implements OnInit {
   pageTitle = "Product Edit";
   errorMessage: string;
 
-  product: Product;
+  //product: Product;
   private dataIsValid: { [key: string]: boolean } = {}
+
+  private currentProduct: Product;
+  private originalProduct: Product;
+
+  get product(): Product {
+    return this.currentProduct;
+  }
+
+  set product(value: Product) {
+    this.currentProduct = value;
+    //clone the object to retain the copy(using spread operater)
+    this.originalProduct = { ...value };
+  }
+
+  get isDirty(): boolean {
+    //order of the form values matter to make this work
+    return JSON.stringify(this.originalProduct) != JSON.stringify(this.currentProduct);
+  }
 
   constructor(
     private productService: ProductService,
@@ -105,11 +124,17 @@ export class ProductEditComponent implements OnInit {
     }
   }
 
+  reset(): void {//clear validation stucture, so that confirm dialog wont appear on save button
+    this.dataIsValid = null;
+    this.currentProduct = null;
+    this.originalProduct = null;
+  }
+
   onSaveComplete(message?: string): void {
     if (message) {
       this.messageService.addMessage(message);
     }
-
+    this.reset();
     // Navigate back to the product list
     this.router.navigate(["/products"]);
   }

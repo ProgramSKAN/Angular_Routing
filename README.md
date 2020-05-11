@@ -185,3 +185,13 @@ canActivate Guard will not reexecute only if child route changes.
 used to limit child routes
 
 it is called when url changes to child route.canActivateChild Guard will not reexecute only if child route changes.
+
+#### canDeactivateChild Guard
+
+checks criteria before leaving route
+
+used to:check for unsaved changes, confirm leaving an incomplete operation
+
+it is executed when url changes to different route even if the only difference is route parameters.
+
+it won't work if the user trys to navigate to entirely different website or closes the browser.
