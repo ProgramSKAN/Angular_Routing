@@ -195,3 +195,13 @@ used to:check for unsaved changes, confirm leaving an incomplete operation
 it is executed when url changes to different route even if the only difference is route parameters.
 
 it won't work if the user trys to navigate to entirely different website or closes the browser.
+
+#### lazy loading of product module
+
+###### requirements for lazy load
+
+the feature area to lazy load must be defined in its own feature module because lazy loading loads all of the components declared in one specific angular module.
+
+routes are grouped under a single parent route because lazy loading is configured on the parent route path.the module for that path is then loaded asynchronously.
+
+feature module must not be imported in any other angular module.
