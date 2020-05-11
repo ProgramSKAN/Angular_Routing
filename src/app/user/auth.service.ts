@@ -10,7 +10,7 @@ export class AuthService {
   currentUser: User;
 
   get isLoggedIn(): boolean {
-    return !!this.currentUser;
+    return !!this.currentUser;//double bang operater (!!) returns false if null or undefined else true
   }
 
   constructor(private messageService: MessageService) { }

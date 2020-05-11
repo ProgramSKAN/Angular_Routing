@@ -167,3 +167,11 @@ this.router.navigateByUrl('/products/5/edit(pop:summary/5)')
 or this.router.navigate([{outlets:{popup:null}}])
 
 or manually clear secondary router-outlet info> this.router.navigateByUrl(['/login'])
+
+#### Route Guard Processing
+
+canDeactivate > canLoad > canactivateChild > canActivate > resolvers
+
+guard can be added to every route (or) adding a guard to parent guard will guard all its child routes
+
+angular CLI> ng g g auth
