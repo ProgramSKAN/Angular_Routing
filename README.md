@@ -229,3 +229,9 @@ customs (used canActivate guard)> own preload strategy(control which modules pre
 ###### canLoad guard blocks preloading
 
 so change canLoad guard to canActivate Guard when preload
+
+#### custom preload strategy
+
+1.Build a preloading strategy service
+
+2.set the preloading strategy routing option

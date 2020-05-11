@@ -1,3 +1,4 @@
+import { SelectiveStrategy } from './selective-strategy.service';
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes, PreloadAllModules } from "@angular/router";
 import { WelcomeComponent } from "./home/welcome.component";
@@ -14,12 +15,17 @@ const routes: Routes = [];
         path: 'products',
         canActivate: [AuthGuard],//use when preload or normal case
         //canLoad: [AuthGuard],//use when lazyload
+        data: { preload: true },
         loadChildren: () =>
           import('./products/product.module').then(m => m.ProductModule)
       },
       { path: "", redirectTo: "welcome", pathMatch: "full" },
       { path: "**", component: PageNotFoundComponent },
-    ], { enableTracing: true, preloadingStrategy: PreloadAllModules }),
+    ], {
+      enableTracing: true,
+      //preloadingStrategy: PreloadAllModules //for preloading all routes
+      preloadingStrategy: SelectiveStrategy
+    }),
   ],
   exports: [RouterModule],
 })
