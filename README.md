@@ -168,7 +168,7 @@ or this.router.navigate([{outlets:{popup:null}}])
 
 or manually clear secondary router-outlet info> this.router.navigateByUrl(['/login'])
 
-#### Route Guard Processing
+#### Route Guard Processing > canActivate
 
 canDeactivate > canLoad > canactivateChild > canActivate > resolvers
 
@@ -177,3 +177,11 @@ guard can be added to every route (or) adding a guard to parent guard will guard
 angular CLI> ng g g auth
 
 since resolved run after route guard, we can't share data from resolver like> route.data['product'].so store the redirecturl in authservice then use that url
+
+canActivate Guard will not reexecute only if child route changes.
+
+#### canActivateChild Guard > similar to canActivate guard. not implemented in code
+
+used to limit child routes
+
+it is called when url changes to child route.canActivateChild Guard will not reexecute only if child route changes.
