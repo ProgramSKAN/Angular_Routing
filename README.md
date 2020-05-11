@@ -211,3 +211,21 @@ feature module must not be imported in any other angular module.
 check criteria before loading asynchronous route
 
 used for : prevent loading a route if the user cannot access it.
+
+canActivate route guard can able ask for login to access the lazy loaded module but it will load the module first then ask for login not vice versa.
+
+#### preloading (Eager lazy loading)
+
+lazy loading get the lazy load module only if the user requests.But preloading gets the preload modules in the background immediately after launching application main page.
+
+#### preloading stategies
+
+no preloading (default)(used canLoad Guard) > lazy load feature modules are loaded on demand when user navigates to route that configured for lazy loading
+
+preload all (used canActivate guard)> preloads all lazy load feature modules
+
+customs (used canActivate guard)> own preload strategy(control which modules preload when)
+
+###### canLoad guard blocks preloading
+
+so change canLoad guard to canActivate Guard when preload
