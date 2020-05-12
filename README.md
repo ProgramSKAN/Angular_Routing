@@ -235,3 +235,5 @@ so change canLoad guard to canActivate Guard when preload
 1.Build a preloading strategy service
 
 2.set the preloading strategy routing option
+
+--refer "Angular router" by victor savkin :: https://leanpub.com/router
